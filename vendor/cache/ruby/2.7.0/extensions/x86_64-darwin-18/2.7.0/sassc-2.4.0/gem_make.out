@@ -1,11 +1,11 @@
-current directory: /Users/macbookpro/Desktop/works/mystore/vendor/cache/ruby/2.7.0/gems/sassc-2.4.0/ext
-/Users/macbookpro/.rbenv/versions/2.7.1/bin/ruby -I /Users/macbookpro/.rbenv/versions/2.7.1/lib/ruby/2.7.0 -r ./siteconf20200701-38978-mtevz1.rb extconf.rb
+current directory: /Users/macbookpro/Desktop/works/rails-online-store/vendor/cache/ruby/2.7.0/gems/sassc-2.4.0/ext
+/Users/macbookpro/.rbenv/versions/2.7.1/bin/ruby -I /Users/macbookpro/.rbenv/versions/2.7.1/lib/ruby/2.7.0 -r ./siteconf20200701-89143-1972pa1.rb extconf.rb
 creating Makefile
 
-current directory: /Users/macbookpro/Desktop/works/mystore/vendor/cache/ruby/2.7.0/gems/sassc-2.4.0/ext
+current directory: /Users/macbookpro/Desktop/works/rails-online-store/vendor/cache/ruby/2.7.0/gems/sassc-2.4.0/ext
 make "DESTDIR=" clean
 
-current directory: /Users/macbookpro/Desktop/works/mystore/vendor/cache/ruby/2.7.0/gems/sassc-2.4.0/ext
+current directory: /Users/macbookpro/Desktop/works/rails-online-store/vendor/cache/ruby/2.7.0/gems/sassc-2.4.0/ext
 make "DESTDIR="
 compiling ./libsass/src/ast.cpp
 compiling ./libsass/src/ast2c.cpp
@@ -75,6 +75,6 @@ compiling ./libsass/src/util_string.cpp
 compiling ./libsass/src/values.cpp
 linking shared-object sassc/libsass.bundle
 
-current directory: /Users/macbookpro/Desktop/works/mystore/vendor/cache/ruby/2.7.0/gems/sassc-2.4.0/ext
+current directory: /Users/macbookpro/Desktop/works/rails-online-store/vendor/cache/ruby/2.7.0/gems/sassc-2.4.0/ext
 make "DESTDIR=" install
-/usr/local/bin/ginstall -c -m 0755 libsass.bundle ./.gem.20200701-38978-1k0tonh/sassc
+/usr/local/bin/ginstall -c -m 0755 libsass.bundle ./.gem.20200701-89143-1eqoo00/sassc

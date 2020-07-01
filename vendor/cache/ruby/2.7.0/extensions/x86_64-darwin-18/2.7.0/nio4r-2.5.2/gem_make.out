@@ -1,5 +1,5 @@
-current directory: /Users/macbookpro/Desktop/works/mystore/vendor/cache/ruby/2.7.0/gems/nio4r-2.5.2/ext/nio4r
-/Users/macbookpro/.rbenv/versions/2.7.1/bin/ruby -I /Users/macbookpro/.rbenv/versions/2.7.1/lib/ruby/2.7.0 -r ./siteconf20200701-38978-6y90ya.rb extconf.rb
+current directory: /Users/macbookpro/Desktop/works/rails-online-store/vendor/cache/ruby/2.7.0/gems/nio4r-2.5.2/ext/nio4r
+/Users/macbookpro/.rbenv/versions/2.7.1/bin/ruby -I /Users/macbookpro/.rbenv/versions/2.7.1/lib/ruby/2.7.0 -r ./siteconf20200701-89143-10mtluz.rb extconf.rb
 checking for unistd.h... yes
 checking for linux/aio_abi.h... no
 checking for sys/select.h... yes
@@ -11,10 +11,10 @@ checking for port_event_t in port.h... no
 checking for sys/resource.h... yes
 creating Makefile
 
-current directory: /Users/macbookpro/Desktop/works/mystore/vendor/cache/ruby/2.7.0/gems/nio4r-2.5.2/ext/nio4r
+current directory: /Users/macbookpro/Desktop/works/rails-online-store/vendor/cache/ruby/2.7.0/gems/nio4r-2.5.2/ext/nio4r
 make "DESTDIR=" clean
 
-current directory: /Users/macbookpro/Desktop/works/mystore/vendor/cache/ruby/2.7.0/gems/nio4r-2.5.2/ext/nio4r
+current directory: /Users/macbookpro/Desktop/works/rails-online-store/vendor/cache/ruby/2.7.0/gems/nio4r-2.5.2/ext/nio4r
 make "DESTDIR="
 compiling bytebuffer.c
 compiling monitor.c
@@ -258,6 +258,6 @@ VALUE rb_ensure(VALUE(*)(VALUE),VALUE,VALUE(*)(VALUE),VALUE);
 1 warning generated.
 linking shared-object nio4r_ext.bundle
 
-current directory: /Users/macbookpro/Desktop/works/mystore/vendor/cache/ruby/2.7.0/gems/nio4r-2.5.2/ext/nio4r
+current directory: /Users/macbookpro/Desktop/works/rails-online-store/vendor/cache/ruby/2.7.0/gems/nio4r-2.5.2/ext/nio4r
 make "DESTDIR=" install
-/usr/local/bin/ginstall -c -m 0755 nio4r_ext.bundle ./.gem.20200701-38978-199nw64
+/usr/local/bin/ginstall -c -m 0755 nio4r_ext.bundle ./.gem.20200701-89143-1bypu0j

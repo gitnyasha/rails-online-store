@@ -1,11 +1,11 @@
-current directory: /Users/macbookpro/Desktop/works/mystore/vendor/cache/ruby/2.7.0/gems/bootsnap-1.4.6/ext/bootsnap
-/Users/macbookpro/.rbenv/versions/2.7.1/bin/ruby -I /Users/macbookpro/.rbenv/versions/2.7.1/lib/ruby/2.7.0 -r ./siteconf20200701-38978-1e8ec45.rb extconf.rb
+current directory: /Users/macbookpro/Desktop/works/rails-online-store/vendor/cache/ruby/2.7.0/gems/bootsnap-1.4.6/ext/bootsnap
+/Users/macbookpro/.rbenv/versions/2.7.1/bin/ruby -I /Users/macbookpro/.rbenv/versions/2.7.1/lib/ruby/2.7.0 -r ./siteconf20200701-89143-yiflek.rb extconf.rb
 creating Makefile
 
-current directory: /Users/macbookpro/Desktop/works/mystore/vendor/cache/ruby/2.7.0/gems/bootsnap-1.4.6/ext/bootsnap
+current directory: /Users/macbookpro/Desktop/works/rails-online-store/vendor/cache/ruby/2.7.0/gems/bootsnap-1.4.6/ext/bootsnap
 make "DESTDIR=" clean
 
-current directory: /Users/macbookpro/Desktop/works/mystore/vendor/cache/ruby/2.7.0/gems/bootsnap-1.4.6/ext/bootsnap
+current directory: /Users/macbookpro/Desktop/works/rails-online-store/vendor/cache/ruby/2.7.0/gems/bootsnap-1.4.6/ext/bootsnap
 make "DESTDIR="
 compiling bootsnap.c
 bootsnap.c:814:7: warning: incompatible pointer types passing 'VALUE (VALUE)' to parameter of type 'VALUE (*)(VALUE, VALUE)' [-Wincompatible-pointer-types]
@@ -17,6 +17,6 @@ VALUE rb_rescue2(VALUE(*)(VALUE),VALUE,VALUE(*)(VALUE,VALUE),VALUE,...);
 1 warning generated.
 linking shared-object bootsnap/bootsnap.bundle
 
-current directory: /Users/macbookpro/Desktop/works/mystore/vendor/cache/ruby/2.7.0/gems/bootsnap-1.4.6/ext/bootsnap
+current directory: /Users/macbookpro/Desktop/works/rails-online-store/vendor/cache/ruby/2.7.0/gems/bootsnap-1.4.6/ext/bootsnap
 make "DESTDIR=" install
-/usr/local/bin/ginstall -c -m 0755 bootsnap.bundle ./.gem.20200701-38978-1juulcc/bootsnap
+/usr/local/bin/ginstall -c -m 0755 bootsnap.bundle ./.gem.20200701-89143-17h1bgp/bootsnap

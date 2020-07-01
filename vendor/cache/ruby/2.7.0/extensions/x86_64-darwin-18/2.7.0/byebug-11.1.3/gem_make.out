@@ -1,11 +1,11 @@
-current directory: /Users/macbookpro/Desktop/works/mystore/vendor/cache/ruby/2.7.0/gems/byebug-11.1.3/ext/byebug
-/Users/macbookpro/.rbenv/versions/2.7.1/bin/ruby -I /Users/macbookpro/.rbenv/versions/2.7.1/lib/ruby/2.7.0 -r ./siteconf20200701-38978-1ys9e66.rb extconf.rb
+current directory: /Users/macbookpro/Desktop/works/rails-online-store/vendor/cache/ruby/2.7.0/gems/byebug-11.1.3/ext/byebug
+/Users/macbookpro/.rbenv/versions/2.7.1/bin/ruby -I /Users/macbookpro/.rbenv/versions/2.7.1/lib/ruby/2.7.0 -r ./siteconf20200701-89143-iol4vg.rb extconf.rb
 creating Makefile
 
-current directory: /Users/macbookpro/Desktop/works/mystore/vendor/cache/ruby/2.7.0/gems/byebug-11.1.3/ext/byebug
+current directory: /Users/macbookpro/Desktop/works/rails-online-store/vendor/cache/ruby/2.7.0/gems/byebug-11.1.3/ext/byebug
 make "DESTDIR=" clean
 
-current directory: /Users/macbookpro/Desktop/works/mystore/vendor/cache/ruby/2.7.0/gems/byebug-11.1.3/ext/byebug
+current directory: /Users/macbookpro/Desktop/works/rails-online-store/vendor/cache/ruby/2.7.0/gems/byebug-11.1.3/ext/byebug
 make "DESTDIR="
 compiling breakpoint.c
 compiling byebug.c
@@ -14,6 +14,6 @@ compiling locker.c
 compiling threads.c
 linking shared-object byebug/byebug.bundle
 
-current directory: /Users/macbookpro/Desktop/works/mystore/vendor/cache/ruby/2.7.0/gems/byebug-11.1.3/ext/byebug
+current directory: /Users/macbookpro/Desktop/works/rails-online-store/vendor/cache/ruby/2.7.0/gems/byebug-11.1.3/ext/byebug
 make "DESTDIR=" install
-/usr/local/bin/ginstall -c -m 0755 byebug.bundle ./.gem.20200701-38978-1v2x01g/byebug
+/usr/local/bin/ginstall -c -m 0755 byebug.bundle ./.gem.20200701-89143-i9jfqc/byebug

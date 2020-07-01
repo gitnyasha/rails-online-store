@@ -1,5 +1,5 @@
-current directory: /Users/macbookpro/Desktop/works/mystore/vendor/cache/ruby/2.7.0/gems/sqlite3-1.4.2/ext/sqlite3
-/Users/macbookpro/.rbenv/versions/2.7.1/bin/ruby -I /Users/macbookpro/.rbenv/versions/2.7.1/lib/ruby/2.7.0 -r ./siteconf20200701-38978-1g4kptu.rb extconf.rb
+current directory: /Users/macbookpro/Desktop/works/rails-online-store/vendor/cache/ruby/2.7.0/gems/sqlite3-1.4.2/ext/sqlite3
+/Users/macbookpro/.rbenv/versions/2.7.1/bin/ruby -I /Users/macbookpro/.rbenv/versions/2.7.1/lib/ruby/2.7.0 -r ./siteconf20200701-89143-1o3kk42.rb extconf.rb
 checking for sqlite3.h... yes
 checking for pthread_create() in -lpthread... yes
 checking for -ldl... yes
@@ -17,10 +17,10 @@ checking for sqlite3_int64 in sqlite3.h... yes
 checking for sqlite3_uint64 in sqlite3.h... yes
 creating Makefile
 
-current directory: /Users/macbookpro/Desktop/works/mystore/vendor/cache/ruby/2.7.0/gems/sqlite3-1.4.2/ext/sqlite3
+current directory: /Users/macbookpro/Desktop/works/rails-online-store/vendor/cache/ruby/2.7.0/gems/sqlite3-1.4.2/ext/sqlite3
 make "DESTDIR=" clean
 
-current directory: /Users/macbookpro/Desktop/works/mystore/vendor/cache/ruby/2.7.0/gems/sqlite3-1.4.2/ext/sqlite3
+current directory: /Users/macbookpro/Desktop/works/rails-online-store/vendor/cache/ruby/2.7.0/gems/sqlite3-1.4.2/ext/sqlite3
 make "DESTDIR="
 compiling aggregator.c
 compiling backup.c
@@ -55,6 +55,6 @@ compiling sqlite3.c
 compiling statement.c
 linking shared-object sqlite3/sqlite3_native.bundle
 
-current directory: /Users/macbookpro/Desktop/works/mystore/vendor/cache/ruby/2.7.0/gems/sqlite3-1.4.2/ext/sqlite3
+current directory: /Users/macbookpro/Desktop/works/rails-online-store/vendor/cache/ruby/2.7.0/gems/sqlite3-1.4.2/ext/sqlite3
 make "DESTDIR=" install
-/usr/local/bin/ginstall -c -m 0755 sqlite3_native.bundle ./.gem.20200701-38978-fdqz7m/sqlite3
+/usr/local/bin/ginstall -c -m 0755 sqlite3_native.bundle ./.gem.20200701-89143-6zmvt7/sqlite3
