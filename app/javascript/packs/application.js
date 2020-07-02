@@ -15,3 +15,17 @@ require("channels");
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 import "bootstrap";
+
+document.addEventListener("turbolinks:load", function () {
+  var notification = document.querySelector(".global-notification");
+
+  if (notification) {
+    window.setTimeout(function () {
+      notification.style.display = "none";
+    }, 3000);
+  }
+});
+document.getElementById("menu-toggle").click(function (e) {
+  e.preventDefault();
+  document.getElementById("wrapper").toggleClass("toggled");
+});

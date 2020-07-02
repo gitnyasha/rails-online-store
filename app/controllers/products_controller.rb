@@ -1,14 +1,24 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.all
+    @categories = Category.all
+
+    categ = params[:categ]
+
+    if !categ.nil?
+      @products = Product.where(:category_id => categ).search(params[:search])
+    else
+      @products = Product.search(params[:search]).order("created_at DESC")
+    end
+    @product = Product.offset(rand(Product.count)).first
+    @order_item = current_order.order_items.new
   end
 
   def new
-    @product = Product.new
+    @product = current_user.products.build
   end
 
   def create
-    @product = Product.new(product_params)
+    @product = current_user.products.build(product_params)
     if @product.save
       redirect_to products_path
     else
@@ -17,6 +27,8 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @product = Product.find(params[:id])
+    @order_item = current_order.order_items.new
   end
 
   def edit
@@ -41,6 +53,6 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name, :description, :price)
+    params.require(:product).permit(:name, :description, :price, :image, :category_id)
   end
 end

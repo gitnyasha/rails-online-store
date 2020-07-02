@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  devise_for :users, controllers: {
+                       registrations: "registrations",
+                     }
+  resources :categories
   resources :products
   resources :order_items
   resource :carts, only: [:show]

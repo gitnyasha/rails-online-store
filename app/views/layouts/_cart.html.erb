@@ -1,4 +1,5 @@
 <%= link_to carts_path do %>
-  <i class="fa fa-shopping-cart"></i>
-  <%= current_order.order_items.size %>
+  <button type="button" class="btn btn-outline-secondary cart">
+    Cart <%= current_order.order_items.size %>
+  </button>
 <% end %>

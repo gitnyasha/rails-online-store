@@ -5,31 +5,36 @@
     <% end %>
   </ul>
 <% end %>
-<% if @order_items.size>0 %>
-  <% @order_items.each do |item| %>
-    <div class="well">
+<div class="panel-body">
+  <% if @order_items.size>0 %>
+    <% @order_items.each do |item| %>
       <div class="row">
-        <div class="col-sm-8">
-          <h3><%= item.product.name %></h3>
+        <div class="col-sm-2">
+          <%= image_tag item.product.image.url, class: "img-responsive" if item.product.image? %>
+        </div>
+        <div class="col-sm-6">
+          <h4 class="product-name"><strong><%= item.product.name.capitalize %></strong></h4>
+          <h4><small>$<%= item.product.price %></small></h4>
         </div>
         <div class="col-sm-4">
-          <div class="pull-right">
-            <%= form_for(item, remote: true) do |f| %>
-              <%= f.hidden_field :product_id, value: item.product.id %>
-              <h5><%= item.product.price %></h5>
-              <div class="form-group">
-                <%= f.text_field :quantity, value: item.quantity.to_i, min: 1, class: 'form-control' %>
-              </div>
-              <div class="btn-group">
-                <%= f.submit "Update Quantity", class: 'btn btn-primary' %>
-                <%= link_to "Delete", item, method: :delete, remote: true, class: 'btn btn-danger'  %>
-              </div>
-              <span>Total Price: <%= item.total_price %></span>
-            <% end %>
-          </div>
+          <%= form_for(item, remote: true) do |f| %>
+            <%= f.hidden_field :product_id, value: item.product.id %>
+            <div class="col-sm text-right">
+              <h6><strong>Total Price: $<%= item.total_price %></strong></h6>
+            </div>
+            <div class="col">
+              <%= f.text_field :quantity, value: item.quantity.to_i, min: 1, class: 'form-control' %>
+            </div>
+            <div class="col">
+              <%= f.submit "Add", class: 'btn btn-primary' %>
+              <%= link_to "", item, method: :delete, remote: true, class: 'fa fa-trash'  %>
+            </div>
+          <% end %>
         </div>
       </div>
-    </div>
+      <hr>
+    <% end %>
+  <% else %>
+    <h3>No items in the cart</h3>
   <% end %>
-<% else %>
-<% end %>
+</div>
