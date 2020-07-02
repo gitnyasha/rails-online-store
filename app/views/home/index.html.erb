@@ -1,13 +1,33 @@
-<%= render 'layouts/sidebar' %>
+<section class="section-main bg padding-y">
+  <div class="container">
+    <div class="row">
+      <aside class="col-md-3 mt-4">
+        <nav class="card">
+          <% @categories.each do |category| %>
+            <%= link_to category.name, products_path(:categ => category.id), class: "list-group-item" %>
+          <% end %>
+        </nav>
+      </aside>
+      <div class="col-md-9">
+        <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
+          <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+              <%= image_tag('ecom.jpg', class: "d-block img-fluid") %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <section class="section-name padding-y-sm">
   <div class="container">
     <header class="section-heading">
-      <a href="#" class="btn btn-outline-primary float-right">See all</a>
       <h3 class="section-title">Popular products</h3>
     </header>
     <div class="row">
       <% @products.each do |product| %>
-        <div class="col-md-3">
+        <div class="col-md-3 mt-2">
           <div href="#" class="card card-product-grid p-4">
             <%= link_to image_tag(product.image.url, class: "img-wrap img-fluid"), product if product.image? %>
             <figcaption class="info-wrap">
