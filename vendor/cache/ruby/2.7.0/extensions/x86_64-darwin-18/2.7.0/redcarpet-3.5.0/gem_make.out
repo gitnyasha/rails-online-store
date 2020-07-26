@@ -1,0 +1,45 @@
+current directory: /Users/macbookpro/Desktop/works/rails-online-store/vendor/cache/ruby/2.7.0/gems/redcarpet-3.5.0/ext/redcarpet
+/Users/macbookpro/.rbenv/versions/2.7.1/bin/ruby -I /Users/macbookpro/.rbenv/versions/2.7.1/lib/ruby/2.7.0 -r ./siteconf20200702-16663-10qwvej.rb extconf.rb
+creating Makefile
+
+current directory: /Users/macbookpro/Desktop/works/rails-online-store/vendor/cache/ruby/2.7.0/gems/redcarpet-3.5.0/ext/redcarpet
+make "DESTDIR=" clean
+
+current directory: /Users/macbookpro/Desktop/works/rails-online-store/vendor/cache/ruby/2.7.0/gems/redcarpet-3.5.0/ext/redcarpet
+make "DESTDIR="
+compiling autolink.c
+compiling buffer.c
+buffer.c:111:45: warning: passing 'const struct buf *' to parameter of type 'struct buf *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+        if (buf->size + 1 <= buf->asize || bufgrow(buf, buf->size + 1) == BUF_OK) {
+                                                   ^~~
+buffer.c:60:21: note: passing argument to parameter 'buf' here
+bufgrow(struct buf *buf, size_t neosz)
+                    ^
+1 warning generated.
+compiling houdini_href_e.c
+compiling houdini_html_e.c
+compiling html.c
+compiling html_smartypants.c
+html_smartypants.c:385:44: warning: passing 'const uint8_t *' (aka 'const unsigned char *') to parameter of type 'const char *' converts between pointers to integer types with different sign [-Wpointer-sign]
+        if (next_to_closing_a && strncmp("&#39;", text+(i+1), 5) == 0) {
+                                                  ^~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/usr/include/string.h:84:40: note: passing argument to parameter here
+int      strncmp(const char *, const char *, size_t);
+                                           ^
+1 warning generated.
+compiling markdown.c
+markdown.c:2836:43: warning: passing 'const uint8_t *' (aka 'const unsigned char *') to parameter of type 'uint8_t *' (aka 'unsigned char *') discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+                if (codefences_enabled && (is_codefence(document + beg, doc_size - beg, NULL) != 0))
+                                                        ^~~~~~~~~~~~~~
+markdown.c:1389:23: note: passing argument to parameter 'data' here
+is_codefence(uint8_t *data, size_t size, struct buf *syntax)
+                      ^
+1 warning generated.
+compiling rc_markdown.c
+compiling rc_render.c
+compiling stack.c
+linking shared-object redcarpet.bundle
+
+current directory: /Users/macbookpro/Desktop/works/rails-online-store/vendor/cache/ruby/2.7.0/gems/redcarpet-3.5.0/ext/redcarpet
+make "DESTDIR=" install
+/usr/local/bin/ginstall -c -m 0755 redcarpet.bundle ./.gem.20200702-16663-zrq39m

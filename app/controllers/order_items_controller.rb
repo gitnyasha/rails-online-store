@@ -2,7 +2,11 @@ class OrderItemsController < ApplicationController
   def create
     @order = current_order
     @order_item = @order.order_items.new(order_item_params)
-    @order.save
+    respond_to do |format|
+      if @order.save
+        format.js { render js: "window.top.location.reload(true);" }
+      end
+    end
 
     session[:order_id] = @order.id
   end
@@ -10,14 +14,22 @@ class OrderItemsController < ApplicationController
   def update
     @order = current_order
     @order_item = @order.order_items.find(params[:id])
-    @order_item.update_attributes(order_item_params)
-    @order_items = @order.order_items
+    respond_to do |format|
+      if @order_item.update_attributes(order_item_params)
+        @order_items = @order.order_items
+        format.js { render js: "window.top.location.reload(true);" }
+      end
+    end
   end
 
   def destroy
     @order = current_order
     @order_item = @order.order_items.find(params[:id])
-    @order_item.destroy
+    respond_to do |format|
+      if @order_item.destroy
+        format.js { render js: "window.top.location.reload(true);" }
+      end
+    end
     @order_items = @order.order_items
   end
 

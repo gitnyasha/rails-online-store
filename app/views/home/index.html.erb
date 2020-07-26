@@ -1,7 +1,7 @@
 <section class="section-main bg padding-y">
   <div class="container">
     <div class="row">
-      <aside class="col-md-3 mt-4">
+      <aside class="col-md-3 mt-4 aside-hide">
         <nav class="card">
           <% @categories.each do |category| %>
             <%= link_to category.name, products_path(:categ => category.id), class: "list-group-item" %>

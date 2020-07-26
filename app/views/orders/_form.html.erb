@@ -1,0 +1,55 @@
+<%= simple_form_for(@order) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+  <div class="row">
+    <div class="col-md-6 mb-2">
+      <div class="md-form ">
+        <label for="first_name" class="">First Name</label>
+        <%= f.text_field :first_name, required: true, class: "form-control" %>
+      </div>
+    </div>
+    <div class="col-md-6 mb-2">
+      <div class="md-form">
+        <label for="last_name" class="">Last Name</label>
+        <%= f.text_field :last_name, required: true, class: "form-control" %>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-6 mb-2">
+      <div class="md-form ">
+        <label for="email" class="">Email</label>
+        <%= f.text_field :email, required: true, class: "form-control" %>
+      </div>
+    </div>
+    <div class="col-md-6 mb-2">
+      <div class="md-form">
+        <label for="Address" class="">Address</label>
+        <%= f.text_field :address, required: true, class: "form-control" %>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-6 mb-2">
+      <div class="md-form ">
+        <label for="City" class="">City</label>
+        <%= f.text_field :city, required: true, class: "form-control" %>
+      </div>
+    </div>
+    <div class="col-md-6 mb-2">
+      <div class="md-form">
+        <label for="Phone" class="">Phone</label>
+        <%= f.text_field :phone, required: true, class: "form-control" %>
+      </div>
+    </div>
+    <!--Grid column-->
+  </div>
+  <hr>
+  <div class="md-form mb-5">
+    <label for="address-2" class="">Additional</label>
+    <%= f.text_area :additional, class: "form-control" %>
+  </div>
+  <%= f.submit "Make Payment", class: "btn btn-primary" %>
+<% end %>

@@ -13,21 +13,25 @@
           <%= image_tag item.product.image.url, class: "img-responsive" if item.product.image? %>
         </div>
         <div class="col-sm-6">
-          <h4 class="product-name"><strong><%= item.product.name.capitalize %></strong></h4>
+          <h4 class="product-name"><%= item.product.name.capitalize %></h4>
           <h4><small>$<%= item.product.price %></small></h4>
         </div>
         <div class="col-sm-4">
           <%= form_for(item, remote: true) do |f| %>
             <%= f.hidden_field :product_id, value: item.product.id %>
-            <div class="col-sm text-right">
-              <h6><strong>Total Price: $<%= item.total_price %></strong></h6>
+            <div class="row text-right">
+              <h6><strong>Amount: $<%= item.total_price %></strong></h6>
             </div>
-            <div class="col">
-              <%= f.text_field :quantity, value: item.quantity.to_i, min: 1, class: 'form-control' %>
-            </div>
-            <div class="col">
-              <%= f.submit "Add", class: 'btn btn-primary' %>
-              <%= link_to "", item, method: :delete, remote: true, class: 'fa fa-trash'  %>
+            <div class="row">
+              <div class="col-md-4">
+                <%= f.text_field :quantity, value: item.quantity.to_i, min: 1, class: 'form-control' %>
+              </div>
+              <div class="col-md-4">
+                <%= f.submit "Add", class: 'btn btn-primary' %>
+              </div>
+              <div class="colo-md-3">
+                <%= link_to "", item, method: :delete, remote: true, class: 'fa fa-trash'  %>
+              </div>
             </div>
           <% end %>
         </div>

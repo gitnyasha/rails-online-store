@@ -1,3 +1,49 @@
-// Place all the styles related to the Home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.aside-hide {
+    display: none;
+}
+
+.btn-hide {
+    display: inline-block;
+}
+
+@media (min-width: 981px) {
+    .aside-hide {
+        display: block;
+    }
+
+    .btn-hide {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 981px) {
+    .myOrder {
+        display: flex;
+        flex-flow: column;
+    }
+    .order-3 {
+        order: 2;
+        position: absolute;
+        top: 20px;
+        right: 10px;
+    }
+
+    .order-3 a {
+        float: right;
+        margin: 0px 5px;
+    }
+    .order-2 {
+        order: 3;
+        margin-top: 20px;
+    }
+    .order-1 {
+        order: 1;
+        float: left;
+    }
+    .two {
+        order: 1;
+    }
+    .one {
+        order: 2;
+    }
+}

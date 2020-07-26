@@ -1,18 +1,17 @@
 <div class="container">
   <div class="row">
-    <div class="col-3 mt-4">
+    <div class="col-3 mt-4 aside-hide">
       <nav class="card">
         <% @categories.each do |category| %>
           <%= link_to category.name, products_path(:categ => category.id), class: "list-group-item" %>
         <% end %>
       </nav>
     </div>
-    <div class="col-9">
+    <div class="col-lg-9">
       <section class="section-name padding-y-sm">
         <div class="container">
           <header class="section-heading">
             <h1>Products</h1>
-            <%= link_to "New product", new_product_path %>
           </header>
           <div class="row">
             <% @products.each do |product| %>

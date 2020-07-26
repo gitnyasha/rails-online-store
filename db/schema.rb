@@ -10,12 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_02_143847) do
+ActiveRecord::Schema.define(version: 2020_07_26_151223) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "slug"
+  end
+
+  create_table "friendly_id_slugs", force: :cascade do |t|
+    t.string "slug", null: false
+    t.integer "sluggable_id", null: false
+    t.string "sluggable_type", limit: 50
+    t.string "scope"
+    t.datetime "created_at"
+    t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
+    t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
+    t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
   end
 
   create_table "order_items", force: :cascade do |t|
@@ -35,6 +47,15 @@ ActiveRecord::Schema.define(version: 2020_07_02_143847) do
     t.float "shipping"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.string "address"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "city"
+    t.string "phone"
+    t.string "email"
+    t.text "additional"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "products", force: :cascade do |t|
@@ -46,6 +67,7 @@ ActiveRecord::Schema.define(version: 2020_07_02_143847) do
     t.string "image"
     t.integer "category_id"
     t.integer "user_id"
+    t.string "slug"
   end
 
   create_table "users", force: :cascade do |t|
@@ -63,4 +85,5 @@ ActiveRecord::Schema.define(version: 2020_07_02_143847) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "orders", "users"
 end
