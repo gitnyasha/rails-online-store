@@ -23,7 +23,9 @@
               <h4 class="text-right">Total $<%= current_order.subtotal %></h4>
             </div>
             <div class="col-md-3">
-              <%= link_to 'Checkout', new_order_path, class: "btn btn-success btn-block" %>
+              <% if @order_items.size>0 %>
+                <%= link_to 'Checkout', new_order_path, class: "btn btn-success btn-block" %>
+              <% end %>
             </div>
           </div>
         </div>
