@@ -7,7 +7,7 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     if @order.save
-      paynow = Paynow.new(ENV["INTEGRATION_ID"], ENV["INTEGRATION_KEY"], "http://localhost:3000/return", "http://localhost:3000/result")
+      paynow = Paynow.new(ENV["INTEGRATION_ID"], ENV["INTEGRATION_KEY"], "https://doucetech.herokuapp.com/", "https://doucetech.herokuapp.com/")
 
       payment = paynow.create_payment(@order.id, @order.email)
       payment.add("goods", current_order.subtotal)
