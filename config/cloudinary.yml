@@ -1,0 +1,21 @@
+# config/cloudinary.yml
+
+---
+development:
+  cloud_name: hthevhqqv
+  api_key: <%= ENV["CL_ID"] %>
+  api_secret: <%= ENV["CL_KEY"] %>
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: hthevhqqv
+  api_key: <%= ENV["CL_ID"] %>
+  api_secret: <%= ENV["CL_KEY"] %>
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: hthevhqqv
+  api_key: <%= ENV["CL_ID"] %>
+  api_secret: <%= ENV["CL_KEY"] %>
+  enhance_image_tag: true
+  static_file_support: false
