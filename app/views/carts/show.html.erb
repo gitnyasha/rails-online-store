@@ -23,8 +23,12 @@
               <h4 class="text-right">Total $<%= current_order.subtotal %></h4>
             </div>
             <div class="col-md-3">
-              <% if @order_items.size>0 %>
-                <%= link_to 'Checkout', new_order_path, class: "btn btn-success btn-block" %>
+              <% if user_signed_in? %>
+                <% if @order_items.size>0 %>
+                  <%= link_to 'Checkout', new_order_path, class: "btn btn-success btn-block" %>
+                <% end %>
+              <% else %>
+                <h5>Sign in to Checkout</h5>
               <% end %>
             </div>
           </div>
