@@ -4,10 +4,10 @@ class OrderItemsController < ApplicationController
     @order_item = @order.order_items.new(order_item_params)
     respond_to do |format|
       if @order_item.save
-        session[:order_id] = @order.id
         format.js { render js: "window.top.location.reload(true);" }
       end
     end
+    session[:order_id] = @order.id
   end
 
   def update

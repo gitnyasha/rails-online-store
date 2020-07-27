@@ -1,7 +1,6 @@
 class Order < ApplicationRecord
   has_many :order_items
   before_save :set_subtotal
-  validates :first_name, :last_name, :address, :email, :phone, :city, presence: true
   belongs_to :user
 
   def subtotal

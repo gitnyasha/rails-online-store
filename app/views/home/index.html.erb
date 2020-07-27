@@ -32,7 +32,7 @@
             <%= link_to image_tag(product.image.url, class: "img-wrap img-fluid"), product if product.image? %>
             <figcaption class="info-wrap">
               <%= link_to product.name.capitalize, product %>
-              <%= form_for(@order_item, remote: true) do |f| %>
+              <%= form_for @order_item, remote: true do |f| %>
                 <%= f.hidden_field :product_id, value: product.id %>
                 <div class="price mt-1">$<%= product.price %></div>
                 <div class="form-group">

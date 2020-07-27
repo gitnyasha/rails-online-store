@@ -1,6 +1,5 @@
 class OrdersController < ApplicationController
   def new
-    @order_items = current_order.order_items
     @order = Order.new
   end
 
