@@ -51,5 +51,6 @@
     <label for="address-2" class="">Additional</label>
     <%= f.text_area :additional, class: "form-control" %>
   </div>
+  <%= f.hidden_field :user_id, value: current_user.id %>
   <%= f.submit "Make Payment", class: "btn btn-primary" %>
 <% end %>
