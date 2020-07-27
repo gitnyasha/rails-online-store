@@ -2,9 +2,12 @@ class OrderItemsController < ApplicationController
   def create
     @order = current_order
     @order_item = @order.order_items.new(order_item_params)
-    @order.save
-    redirect_to carts_path
-    session[:order_id] = @order.id
+    respond_to do |format|
+      if @order_item.save
+        session[:order_id] = @order.id
+        format.js { render js: "window.top.location.reload(true);" }
+      end
+    end
   end
 
   def update
