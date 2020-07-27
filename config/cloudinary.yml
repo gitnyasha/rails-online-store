@@ -7,6 +7,7 @@ development:
   api_secret: <%= ENV["CL_KEY"] %>
   enhance_image_tag: true
   static_file_support: false
+  secure: true
 production:
   cloud_name: hthevhqqv
   api_key: <%= ENV["CL_ID"] %>
