@@ -12,9 +12,14 @@
   </head>
   <body>
     <% if flash[:notice] %>
-      <%= notice %>
-    <% end %> <% if flash[:alert] %>
-      <%= alert %>
+      <div class="alert alert-success global-notification">
+        <p class="notice"><%= notice %></p>
+      </div>
+    <% end %>
+    <% if flash[:alert] %>
+      <div class="alert alert-danger global-notification">
+        <p class="alert"><%= alert %></p>
+      </div>
     <% end %>
     <header class="section-header">
       <section class="header-main border-bottom pb-3 pt-3">
