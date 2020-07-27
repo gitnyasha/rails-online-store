@@ -1,4 +1,4 @@
-.aside-hide {
+.aside-hide, .widget-header {
     display: none;
 }
 
@@ -6,9 +6,23 @@
     display: inline-block;
 }
 
+.widgets {
+    align-items: flex-end;
+    width: 40%;
+}
+
+.half {
+    align-self: start;
+    width: 60%;
+}
+
 @media (min-width: 981px) {
-    .aside-hide {
+    .aside-hide, .widget-header {
         display: block;
+    }
+
+    .widgets {
+        display: none;
     }
 
     .btn-hide {
@@ -23,9 +37,7 @@
     }
     .order-3 {
         order: 2;
-        position: absolute;
-        top: 20px;
-        right: 10px;
+        align-items: center;
     }
 
     .order-3 a {
@@ -38,7 +50,7 @@
     }
     .order-1 {
         order: 1;
-        float: left;
+        display: flex;
         font-size: 13px;
     }
     .two {

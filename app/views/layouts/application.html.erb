@@ -25,8 +25,29 @@
       <section class="header-main border-bottom pb-3 pt-3">
         <div class="container">
           <div class="row myOrder">
-            <div class="col-lg-2 col-4 order-1">
-              <h3><%= link_to "Dealiz", root_path %></h3>
+            <div class="col-lg-2 col-sm-12 order-1">
+              <h3 class="half"><%= link_to "Dealiz", root_path %></h3>
+              <div class="widgets mr-3">
+                <a class="btn btn-outline-secondary btn-hide" type="button" data-toggle="collapse" data-target="#main_nav" aria-controls="main_nav" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="fa fa-home"></i>
+                </a>
+                <%= render 'layouts/cart' %>
+                <a class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fa fa-user"></i>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <% if user_signed_in? %>
+                    <% if current_user.admin_role? %>
+                      <%= link_to "Admin", '/admin', class: "dropdown-item" %>
+                    <% end %>
+                    <%= link_to 'Settings', edit_user_registration_path, class: "dropdown-item" %>
+                    <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+                  <% else %>
+                    <%= link_to "Sign In", new_user_session_path, class: "dropdown-item" %>
+                    <%= link_to "Sign up", new_user_registration_path, class: "dropdown-item" %>
+                  <% end %>
+                </div>
+              </div>
             </div>
             <div class="col-lg-6 col-sm-12 order-2">
               <%= form_tag products_path, :method => "get" do %>
