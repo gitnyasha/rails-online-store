@@ -3,7 +3,7 @@ class OrderItemsController < ApplicationController
     @order = current_order
     @order_item = @order.order_items.new(order_item_params)
     @order_item.save
-
+    redirect_to carts_path
     session[:order_id] = @order.id
   end
 
