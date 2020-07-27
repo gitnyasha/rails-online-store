@@ -8,12 +8,24 @@
 
 .widgets {
     align-items: flex-end;
-    width: 40%;
+    width: 50%;
 }
 
 .half {
     align-self: start;
-    width: 60%;
+    width: 50%;
+}
+
+@media (min-width: 510px) {
+    .widgets {
+        align-items: flex-end;
+        width: 35%;
+    }
+    
+    .half {
+        align-self: start;
+        width: 65%;
+    } 
 }
 
 @media (min-width: 981px) {
