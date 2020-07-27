@@ -18,17 +18,19 @@
       <div class="col-sm-4">
         <%= form_for(item, remote: true) do |f| %>
           <%= f.hidden_field :product_id, value: item.product.id %>
-          <div class="row text-right">
-            <h6><strong>Amount: $<%= item.total_price %></strong></h6>
+          <div class="row">
+            <div class="col">
+              <h6><strong>Amount: $<%= item.total_price %></strong></h6>
+            </div>
           </div>
           <div class="row">
-            <div class="col-md-4">
+            <div class="col-sm-4 mb-3">
               <%= f.text_field :quantity, value: item.quantity.to_i, min: 1, class: 'form-control' %>
             </div>
-            <div class="col-md-4">
+            <div class="col-sm-4 mb-3">
               <%= f.submit "Add", class: 'btn btn-primary' %>
             </div>
-            <div class="colo-md-3">
+            <div class="col-sm-3">
               <%= link_to "", item, method: :delete, remote: true, class: 'fa fa-trash'  %>
             </div>
           </div>

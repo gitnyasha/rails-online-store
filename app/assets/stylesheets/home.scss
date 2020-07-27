@@ -6,26 +6,9 @@
     display: inline-block;
 }
 
-.widgets {
-    align-items: flex-end;
-    width: 50%;
-}
-
 .half {
     align-self: start;
     width: 50%;
-}
-
-@media (min-width: 510px) {
-    .widgets {
-        align-items: flex-end;
-        width: 35%;
-    }
-    
-    .half {
-        align-self: start;
-        width: 65%;
-    } 
 }
 
 @media (min-width: 981px) {
@@ -62,7 +45,6 @@
     }
     .order-1 {
         order: 1;
-        display: flex;
         font-size: 13px;
     }
     .two {

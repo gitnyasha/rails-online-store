@@ -26,14 +26,11 @@
         <div class="container">
           <div class="row myOrder">
             <div class="col-lg-2 col-sm-12 order-1">
-              <h3 class="half"><%= link_to "Dealiz", root_path %></h3>
-              <div class="widgets mr-3">
-                <a class="btn btn-outline-secondary btn-hide" type="button" data-toggle="collapse" data-target="#main_nav" aria-controls="main_nav" aria-expanded="false" aria-label="Toggle navigation">
-                  <i class="fa fa-home"></i>
-                </a>
+              <nav class="navbar navbar-expand-lg navbar-light">
+                <h3 class="navbar-brand mr-sm-5"><%= link_to "Dealiz", root_path %></h3>
                 <%= render 'layouts/cart' %>
-                <a class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="fa fa-user"></i>
+                <a class="navbar-toggler" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="fa fa-user"></span>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <% if user_signed_in? %>
@@ -47,7 +44,10 @@
                     <%= link_to "Sign up", new_user_registration_path, class: "dropdown-item" %>
                   <% end %>
                 </div>
-              </div>
+                <a class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav" aria-controls="main_nav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </a>
+              </nav>
             </div>
             <div class="col-lg-6 col-sm-12 order-2">
               <%= form_tag products_path, :method => "get" do %>
