@@ -7,19 +7,7 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     if @order.save
-      paynow = Paynow.new(ENV["INTEGRATION_ID"], ENV["INTEGRATION_KEY"], "https://doucetech.herokuapp.com/", "https://doucetech.herokuapp.com/")
-
-      payment = paynow.create_payment(@order.id, @order.email)
-      payment.add("goods", current_order.subtotal)
-      response = paynow.send(payment)
-
-      if response.success
-        redirect_to response.redirect_url
-        # poll_url = response.poll_url
-        # print("Poll Url: ", poll_url)
-        # status = paynow.check_transaction_status(poll_url)
-        # print("Payment Status: ", status.status)
-      end
+      process_paynow
     else
       flash[:alert] = "Error encountered."
       redirect_to new_order_path
@@ -27,6 +15,22 @@ class OrdersController < ApplicationController
   end
 
   private
+
+  def process_paynow
+    paynow = Paynow.new(ENV["INTEGRATION_ID"], ENV["INTEGRATION_KEY"], "https://doucetech.herokuapp.com/", "https://doucetech.herokuapp.com/")
+
+    payment = paynow.create_payment(@order.id, @order.email)
+    payment.add("goods", current_order.subtotal)
+    response = paynow.send(payment)
+
+    if response.success
+      redirect_to response.redirect_url
+      # poll_url = response.poll_url
+      # print("Poll Url: ", poll_url)
+      # status = paynow.check_transaction_status(poll_url)
+      # print("Payment Status: ", status.status)
+    end
+  end
 
   # Only allow a list of trusted parameters through.
   def order_params
