@@ -1,0 +1,22 @@
+current directory: /Users/macbookpro/Desktop/works/rails-online-store/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.4.6/ext/bootsnap
+/Users/macbookpro/.rbenv/versions/2.7.1/bin/ruby -I /Users/macbookpro/.rbenv/versions/2.7.1/lib/ruby/2.7.0 -r ./siteconf20201002-3177-6bgh1x.rb extconf.rb
+creating Makefile
+
+current directory: /Users/macbookpro/Desktop/works/rails-online-store/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.4.6/ext/bootsnap
+make "DESTDIR=" clean
+
+current directory: /Users/macbookpro/Desktop/works/rails-online-store/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.4.6/ext/bootsnap
+make "DESTDIR="
+compiling bootsnap.c
+bootsnap.c:814:7: warning: incompatible pointer types passing 'VALUE (VALUE)' to parameter of type 'VALUE (*)(VALUE, VALUE)' [-Wincompatible-pointer-types]
+      rescue_input_to_storage, Qnil,
+      ^~~~~~~~~~~~~~~~~~~~~~~
+/Users/macbookpro/.rbenv/versions/2.7.1/include/ruby-2.7.0/ruby/ruby.h:1988:47: note: passing argument to parameter here
+VALUE rb_rescue2(VALUE(*)(VALUE),VALUE,VALUE(*)(VALUE,VALUE),VALUE,...);
+                                              ^
+1 warning generated.
+linking shared-object bootsnap/bootsnap.bundle
+
+current directory: /Users/macbookpro/Desktop/works/rails-online-store/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.4.6/ext/bootsnap
+make "DESTDIR=" install
+/usr/local/bin/ginstall -c -m 0755 bootsnap.bundle ./.gem.20201002-3177-pwh88k/bootsnap

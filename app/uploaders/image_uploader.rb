@@ -2,7 +2,6 @@ class ImageUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
-  include Cloudinary::CarrierWave
 
   # Cloudinary will be utilized in production (Heroku) while local psql stored us utilized in development and testing environment.
   if Rails.env.production?

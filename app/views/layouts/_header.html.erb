@@ -1,0 +1,74 @@
+<!-- Main Navigation -->
+<header>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-md navbar-light bg-light scrolling-navbar">
+    <div class="container-fluid">
+      <!-- Brand -->
+      <%= link_to "Dealiz", root_path, class: "navbar-brand" %>
+      <!-- Collapse button -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+        aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Links -->
+      <div class="collapse navbar-collapse" id="basicExampleNav">
+        <!-- Right -->
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <%= render 'layouts/cart' %>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle waves-effect" id="navbarDropdownMenuLink3" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="true">
+              Categories
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <% if @categories %>
+                <% @categories.each do |category| %>
+                  <%= link_to category.name, products_path(:categ => category.id), class: "dropdown-item" %>
+                <% end %>
+              <% end %>
+            </div>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Products", products_path, class: "nav-link waves-effect" %>
+          </li>
+          <% if user_signed_in? %>
+            <% if current_user.admin_role? %>
+              <li class="nav-item"><%= link_to "Admin", '/admin', class: "nav-link waves-effect" %></li>
+            <% end %>
+            <li class="nav-item"><%= link_to 'Profile', edit_user_registration_path, class: "nav-link waves-effect" %></li>
+            <li class="nav-item"><%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "nav-link waves-effect" %></li>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to "Sign In", new_user_session_path, class: "nav-link waves-effect" %>
+            </li>
+            <li class="nav-item pl-2 mb-2 mb-md-0">
+              <%= link_to "Register", new_user_registration_path, class: "btn btn-outline-info btn-md btn-rounded btn-navbar waves-effect waves-light" %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+      <!-- Links -->
+    </div>
+  </nav>
+  <!-- Navbar -->
+  <div class="jumbotron jumbotron-image color-grey-light my-back">
+    <div class="mask rgba-black-strong d-flex align-items-center h-100">
+      <div class="container text-center white-text py-5">
+        <h1 class="mb-3">Search For Products</h1>
+        <%= form_tag products_path, :method => "get", class: "pl-5 pr-5" do %>
+          <div class="input-group">
+            <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Search for products" %>
+            <div class="input-group-append">
+              <%= button_tag( :class => "btn btn-secondary") do %>
+                <i class="fa fa-search"></i>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- Main Navigation -->

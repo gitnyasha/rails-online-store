@@ -1,25 +1,3 @@
-<section class="section-main bg padding-y">
-  <div class="container">
-    <div class="row">
-      <aside class="col-md-3 mt-4 aside-hide">
-        <nav class="card">
-          <% @categories.each do |category| %>
-            <%= link_to category.name, products_path(:categ => category.id), class: "list-group-item" %>
-          <% end %>
-        </nav>
-      </aside>
-      <div class="col-md-9">
-        <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
-          <div class="carousel-inner" role="listbox">
-            <div class="carousel-item active">
-              <%= image_tag('ecom.jpg', class: "d-block img-fluid") %>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 <section class="section-name padding-y-sm">
   <div class="container">
     <header class="section-heading">

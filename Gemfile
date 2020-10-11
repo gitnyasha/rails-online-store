@@ -34,7 +34,7 @@ gem "rails_admin"
 gem "friendly_id", "~> 5.2", ">= 5.2.3"
 gem "redcarpet", "~> 3.4"
 gem "coderay", "~> 1.1", ">= 1.1.2"
-gem "paynow_sdk", "~> 1.0.0"
+gem "paynow_sdk"
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

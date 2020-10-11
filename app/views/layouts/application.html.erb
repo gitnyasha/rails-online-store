@@ -21,104 +21,7 @@
         <p class="alert"><%= alert %></p>
       </div>
     <% end %>
-    <header class="section-header">
-      <section class="header-main border-bottom pb-3 pt-3">
-        <div class="container">
-          <div class="row myOrder">
-            <div class="col-lg-2 col-sm-12 order-1">
-              <nav class="navbar navbar-expand-lg navbar-light">
-                <h3 class="navbar-brand mr-sm-5"><%= link_to "Dealiz", root_path %></h3>
-                <%= render 'layouts/cart' %>
-                <a class="navbar-toggler" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <span class="fa fa-user"></span>
-                </a>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <% if user_signed_in? %>
-                    <% if current_user.admin_role? %>
-                      <%= link_to "Admin", '/admin', class: "dropdown-item" %>
-                    <% end %>
-                    <%= link_to 'Settings', edit_user_registration_path, class: "dropdown-item" %>
-                    <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-                  <% else %>
-                    <%= link_to "Sign In", new_user_session_path, class: "dropdown-item" %>
-                    <%= link_to "Sign up", new_user_registration_path, class: "dropdown-item" %>
-                  <% end %>
-                </div>
-                <a class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav" aria-controls="main_nav" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </a>
-              </nav>
-            </div>
-            <div class="col-lg-6 col-sm-12 order-2">
-              <%= form_tag products_path, :method => "get" do %>
-                <div class="input-group w-100">
-                  <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Search for products" %>
-                  <div class="input-group-append">
-                    <%= button_tag( :class => "btn btn-outline-secondary") do %>
-                      <i class="fa fa-search"></i>
-                    <% end %>
-                  </div>
-                </div>
-              <% end %>
-            </div>
-            <div class="col-lg-4 col-8 order-3">
-              <div class="widgets-wrap float-md-right">
-                <div class="widget-header  mr-3">
-                  <a class="btn btn-outline-secondary btn-hide" type="button" data-toggle="collapse" data-target="#main_nav" aria-controls="main_nav" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fa fa-home"></i>
-                  </a>
-                  <%= render 'layouts/cart' %>
-                  <a class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fa fa-user"></i>
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <% if user_signed_in? %>
-                      <% if current_user.admin_role? %>
-                        <%= link_to "Admin", '/admin', class: "dropdown-item" %>
-                      <% end %>
-                      <%= link_to 'Settings', edit_user_registration_path, class: "dropdown-item" %>
-                      <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-                    <% else %>
-                      <%= link_to "Sign In", new_user_session_path, class: "dropdown-item" %>
-                      <%= link_to "Sign up", new_user_registration_path, class: "dropdown-item" %>
-                    <% end %>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </header>
-    <nav class="navbar navbar-main navbar-expand-lg navbar-light border-bottom">
-      <div class="container">
-        <div class="collapse navbar-collapse" id="main_nav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <%= link_to 'Home', root_path, class: "nav-link" %>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
-            </li>
-            <li class="nav-item">
-              <%= link_to 'Products', products_path, class: "nav-link" %>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link navbar-toggler" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Categories
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <% if @categories %>
-                  <% @categories.each do |category| %>
-                    <%= link_to category.name, products_path(:categ => category.id), class: "dropdown-item" %>
-                  <% end %>
-                <% end %>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <%= render 'layouts/header' %>
     <%= yield %>
     <footer class="footer bg-light pb-5 pt-5 mt-5">
       <div class="container">
@@ -165,5 +68,163 @@
         </div>
       </div>
     </footer>
+    <script>
+      $(document).ready(function()
+      {
+      "use strict";
+      
+      var menuActive = false;
+      var header = $('.header');
+      setHeader();
+      initCustomDropdown();
+      initPageMenu();
+      
+      function setHeader()
+      {
+      
+      if(window.innerWidth > 991 && menuActive)
+      {
+      closeMenu();
+      }
+      }
+      
+      function initCustomDropdown()
+      {
+      if($('.custom_dropdown_placeholder').length && $('.custom_list').length)
+      {
+      var placeholder = $('.custom_dropdown_placeholder');
+      var list = $('.custom_list');
+      }
+      
+      placeholder.on('click', function (ev)
+      {
+      if(list.hasClass('active'))
+      {
+      list.removeClass('active');
+      }
+      else
+      {
+      list.addClass('active');
+      }
+      
+      $(document).one('click', function closeForm(e)
+      {
+      if($(e.target).hasClass('clc'))
+      {
+      $(document).one('click', closeForm);
+      }
+      else
+      {
+      list.removeClass('active');
+      }
+      });
+      
+      });
+      
+      $('.custom_list a').on('click', function (ev)
+      {
+      ev.preventDefault();
+      var index = $(this).parent().index();
+      
+      placeholder.text( $(this).text() ).css('opacity', '1');
+      
+      if(list.hasClass('active'))
+      {
+      list.removeClass('active');
+      }
+      else
+      {
+      list.addClass('active');
+      }
+      });
+      
+      
+      $('select').on('change', function (e)
+      {
+      placeholder.text(this.value);
+      
+      $(this).animate({width: placeholder.width() + 'px' });
+      });
+      }
+      
+      /*
+      
+      4. Init Page Menu
+      
+      */
+      
+      function initPageMenu()
+      {
+      if($('.page_menu').length && $('.page_menu_content').length)
+      {
+      var menu = $('.page_menu');
+      var menuContent = $('.page_menu_content');
+      var menuTrigger = $('.menu_trigger');
+      
+      //Open / close page menu
+      menuTrigger.on('click', function()
+      {
+      if(!menuActive)
+      {
+      openMenu();
+      }
+      else
+      {
+      closeMenu();
+      }
+      });
+      
+      //Handle page menu
+      if($('.page_menu_item').length)
+      {
+      var items = $('.page_menu_item');
+      items.each(function()
+      {
+      var item = $(this);
+      if(item.hasClass("has-children"))
+      {
+      item.on('click', function(evt)
+      {
+      evt.preventDefault();
+      evt.stopPropagation();
+      var subItem = item.find('> ul');
+      if(subItem.hasClass('active'))
+      {
+      subItem.toggleClass('active');
+      TweenMax.to(subItem, 0.3, {height:0});
+      }
+      else
+      {
+      subItem.toggleClass('active');
+      TweenMax.set(subItem, {height:"auto"});
+      TweenMax.from(subItem, 0.3, {height:0});
+      }
+      });
+      }
+      });
+      }
+      }
+      }
+      
+      function openMenu()
+      {
+      var menu = $('.page_menu');
+      var menuContent = $('.page_menu_content');
+      TweenMax.set(menuContent, {height:"auto"});
+      TweenMax.from(menuContent, 0.3, {height:0});
+      menuActive = true;
+      }
+      
+      function closeMenu()
+      {
+      var menu = $('.page_menu');
+      var menuContent = $('.page_menu_content');
+      TweenMax.to(menuContent, 0.3, {height:0});
+      menuActive = false;
+      }
+      
+      
+      });
+    </script>
   </body>
 </html>

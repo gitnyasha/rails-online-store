@@ -1,6 +1,4 @@
-<%= link_to carts_path do %>
-  <button type="button" class="navbar-toggler cart">
-    <i class="fa fa-shopping-cart"></i>
-    <%= current_order.order_items.size %>
-  </button>
+<%= link_to carts_path, class: "nav-link navbar-link-2 waves-effect" do %>
+  <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560918704/cart.png" alt="">
+  <%= current_order.order_items.size %>
 <% end %>
