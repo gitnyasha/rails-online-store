@@ -3,18 +3,21 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-md navbar-light bg-light scrolling-navbar">
     <div class="container-fluid">
-      <!-- Brand -->
-      <%= link_to "Dealiz", root_path, class: "navbar-brand" %>
       <!-- Collapse button -->
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
         aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+      <!-- Brand -->
+      <%= link_to "Dealiz", root_path, class: "navbar-brand" %>
+      <button class="navbar-toggler border-0">
+        <%= render 'layouts/cart' %>
+      </button>
       <!-- Links -->
       <div class="collapse navbar-collapse" id="basicExampleNav">
         <!-- Right -->
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
+          <li class="nav-item cart-hide">
             <%= render 'layouts/cart' %>
           </li>
           <li class="nav-item dropdown">

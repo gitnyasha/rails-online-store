@@ -1,4 +1,4 @@
 <%= link_to carts_path, class: "nav-link navbar-link-2 waves-effect" do %>
   <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560918704/cart.png" alt="">
-  <%= current_order.order_items.size %>
+  <span><%= current_order.order_items.size %></span>
 <% end %>
